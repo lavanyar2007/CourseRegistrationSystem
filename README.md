@@ -1,42 +1,65 @@
-# 🎓 Course Registration System
+🎓 Course Registration System
+📌 Project Overview
 
-## 📌 Description
-A Java + MySQL project that automates student course registrations.
-- Admin can add/update/delete courses.
-- Students can register for available courses.
-- Faculty can view enrolled students.
+The Course Registration System is a Java + MySQL application that makes course enrollment easy for students and management simple for institutions.
+Admin can add, update, and delete courses.
+Students can register for courses.
+Faculty can view the list of students enrolled in their courses.
+This system reduces paperwork, avoids errors, and provides a smooth digital solution for course management.
 
-## 🚀 Features
-- Add, Update, Delete Courses
-- Register Students
-- View Enrollments
-- Database-backed with MySQL
-- Modular DAO structure
+🚀 Key Features
 
-## 🛠 Tech Stack
--  FRONTEND:HTML,CSS,JAVASCRIPT
--  BACKEND:Core Java
--   DATABASE:MySql
+Manage courses (Add, Update, Delete).
+Student registration for available courses.
+Faculty access to enrolled student lists.
+MySQL database for secure data storage.
+DAO structure for clean and modular code.
 
+🛠 Tech Stack
 
-## 📂 Project Structure
+Frontend: HTML, CSS, JavaScript
+Backend: Core Java
+Database: MySQL
+
+📂 Project Structure
+
 CourseRegistrationSystem/
 ├── src/
-│ ├── Student.java
-│ ├── Course.java
-│ ├── Registration.java
-│ ├── DatabaseUtil.java
-│ ├── dao/
-│ │ ├── StudentDAO.java
-│ │ ├── CourseDAO.java
-│ │ └── RegistrationDAO.java
-│ └── Main.java
+│   ├── Student.java
+│   ├── Course.java
+│   ├── Registration.java
+│   ├── DatabaseUtil.java
+│   ├── dao/
+│   │   ├── StudentDAO.java
+│   │   ├── CourseDAO.java
+│   │   └── RegistrationDAO.java
+│   └── Main.java
 ├── README.md
 └── screenshots/
 
 
-## 👤 Author
-- Lavanya R  
-- CSE Department  
-- SECE  
+🗄️ Database Design
 
+Tables:
+
+Student → Stores student details (ID, name, email, password).
+Course → Stores course details (ID, name, credits).
+Registration → Links students with courses (student_id, course_id).
+
+Relationships:
+
+One student can register for many courses.
+One course can have many students. 
+
+📊 Workflow
+
+Admin → Manages courses.
+Student → Registers for courses.
+Faculty → Views enrolled students.
+
+📌 Future Improvements
+
+Role-based login (Admin, Student, Faculty).
+Timetable conflict detection.
+Online portal with a modern web interface.
+Notifications for successful registrations.
