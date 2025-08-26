@@ -14,9 +14,10 @@ A Java + MySQL project that automates student course registrations.
 - Modular DAO structure
 
 ## 🛠 Tech Stack
-- Java (Core, JDBC)
-- MySQL
-- UML (Design)
+-  FRONTEND:HTML,CSS,JAVASCRIPT
+-  BACKEND:Core Java
+-   DATABASE:MySql
+
 
 ## 📂 Project Structure
 CourseRegistrationSystem/
