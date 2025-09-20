@@ -1,20 +1,20 @@
 public class Student {
-    private int studentId;
+    private int id;
     private String name;
     private String email;
 
-    public Student(int studentId, String name, String email) {
-        this.studentId = studentId;
+    public Student(int id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    // Getters & Setters (Encapsulation)
-    public int getStudentId() { return studentId; }
+    public int getId() { return id; }
     public String getName() { return name; }
     public String getEmail() { return email; }
 
-    public void register() {
-        System.out.println(name + " has registered.");
+    @Override
+    public String toString() {
+        return "Student ID: " + id + ", Name: " + name + ", Email: " + email;
     }
 }

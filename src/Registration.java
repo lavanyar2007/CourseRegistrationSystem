@@ -1,29 +1,17 @@
-// Registration.java
-// Represents the enrollment of a student in a course
-
 public class Registration {
-    private int regId;
-    private int studentId;
-    private int courseId;
+    private Student student;
+    private Course course;
 
-    // Constructor
-    public Registration(int regId, int studentId, int courseId) {
-        this.regId = regId;
-        this.studentId = studentId;
-        this.courseId = courseId;
+    public Registration(Student student, Course course) {
+        this.student = student;
+        this.course = course;
     }
 
-    // Getters & Setters
-    public int getRegId() { return regId; }
-    public void setRegId(int regId) { this.regId = regId; }
+    public Student getStudent() { return student; }
+    public Course getCourse() { return course; }
 
-    public int getStudentId() { return studentId; }
-    public void setStudentId(int studentId) { this.studentId = studentId; }
-
-    public int getCourseId() { return courseId; }
-    public void setCourseId(int courseId) { this.courseId = courseId; }
-
-    public void enroll() {
-        System.out.println("Student " + studentId + " enrolled in course " + courseId);
+    @Override
+    public String toString() {
+        return student.getName() + " registered for " + course.getName();
     }
 }
