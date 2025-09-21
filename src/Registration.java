@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Registration implements Serializable {
+
+public class Registration {
     private static final long serialVersionUID = 1L;
 
     private Student student;

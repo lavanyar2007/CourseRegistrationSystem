@@ -1,5 +1,5 @@
 import java.util.*;
-import java.io.*;
+
 
 // Main class
 public class Main {
@@ -11,8 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //this will  Load previous stored data
-        loadData();
+       
 
         System.out.println("------ Welcome to Simple Course Registration System ------");
 
@@ -75,7 +74,6 @@ public class Main {
                    deleteRegistration(sc); 
                    break;
                 case 13: 
-                    saveData(); // save all the data before exit
                     System.out.println("System Exiting......!");
                     break;
                 default: 
@@ -143,7 +141,7 @@ public class Main {
         }
 
         if(todel != null){
-            // remove registrations with this course
+            // remove registrations with this course also
             regList.removeIf(r -> r.getCourse().getId() == id);
             courseList.remove(todel);
             System.out.println("Course deleted.");
@@ -225,12 +223,17 @@ public class Main {
 
         Student st = null;
         for(Student s: studentList){
-            if(s.getId() == sid){ st = s; break; }
+            if(s.getId() == sid)
+            { 
+                st = s; break; 
+            }
         }
 
         Course crs = null;
         for(Course c: courseList){
-            if(c.getId() == cid){ crs = c; break; }
+            if(c.getId() == cid){ 
+                crs = c; break; 
+                }
         }
 
         if(st != null && crs != null){
@@ -302,27 +305,5 @@ public class Main {
             System.out.println(s);
         }
     }
-    // save and load function for previous data
-    @SuppressWarnings("unchecked")
-    private static void loadData(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.ser"))){
-            studentList = (List<Student>) in.readObject();
-            courseList = (List<Course>) in.readObject();
-            regList = (List<Registration>) in.readObject();
-            System.out.println("Previous data loaded.");
-        } catch(Exception e){
-            System.out.println("No saved file. Starting fresh.");
-        }
-    }
-
-    private static void saveData(){
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("data.ser"))){
-            out.writeObject(studentList);
-            out.writeObject(courseList);
-            out.writeObject(regList);
-            System.out.println("Data saved.");
-        } catch(Exception e){
-            System.out.println("Error while saving.");
-        }
-    }
+   
 }
